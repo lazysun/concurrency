@@ -1,5 +1,9 @@
 package com.snippets;
-
+/**
+ * Why somebody shouldn't extend thread class
+ * @author singhv
+ *
+ */
 public class WaitPuzzle {
 
 	public static void main(String[] args) throws InterruptedException {
