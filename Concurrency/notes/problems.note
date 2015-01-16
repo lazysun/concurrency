@@ -59,11 +59,11 @@ Largest Sum Contiguous Subarray
     }
     
     # Solve for the case for all negative integers
+    # Suppose you have an NxN matrix of positive and negative integers. Write some code that finds the sub-matrix with the maximum sum of its elements
     
 ## Start ----
 
- Largest altering subsequence.    
- 
+  Largest altering subsequence.    
  # need to understand the problem
  
 ## Start ----
@@ -87,9 +87,75 @@ This has two holes
 
 # for more info http://stackoverflow.com/questions/4025980/count-the-number-of-holes-in-a-bitmap
  
-## Start ----
- Dynamic Programming: Rod Cutting
- 
- #DP 
+##Start
+Rod Cutting
+
+The rod-cutting problem is the following. Given a rod of length n inches and a table of prices Pi for i = 1, 2, ... n, 
+determine the maximum revenue Rn obtainable by cutting up the rod and selling the pieces. 
+Note that if the price Pn for a rod of length n is large enough, an optimal solution may require no cutting at all.
+
+ref : http://mypathtothe4.blogspot.com/2013/03/ 
+#DP 
+
+##Start
+Task Scheduling
+
+#Greedy
+
+##Start
+Activity Selection
+
+#Check if Activity Times Overlap will greedy works
+
+#Greedy
+
+##Start
+
+Covering Dots with Circles
+ref:http://mypathtothe4.blogspot.com/2013/03/
+#SetCoverProblem
  
   
+ ##Start
+ 
+ Design and describe a system/application that will most efficiently produce a report of the top 1 million Google search requests. 
+ These are the particulars: 
+ 1) You are given 12 servers to work with. They are all dual-processor machines with 4Gb of RAM, 4x400GB hard drives and networked together.(Basically, nothing more than high-end PC’s) 
+ 2) The log data has already been cleaned for you. It consists of 100 Billion log lines, broken down into 12 320 GB files of 40-byte search terms per line. 
+ 3) You can use only custom written applications or available free open-source software.
+ #do
+ #Design
+ 
+ ##Start
+ 
+ There is an array A[N] of N numbers. You have to compose an array Output[N] such that Output[i] will be equal to multiplication of all the elements of A[N] except A[i]. 
+ For example Output[0] will be multiplication of A[1] to A[N-1] and Output[1] will be multiplication of A[0] and from A[2] to A[N-1]. 
+ Solve it without division operator and in O(n).
+ #do
+ 
+ ##Start
+ 
+ You are given an array [a1 To an] and we have to construct another array [b1 To bn] where bi = a1*a2*...*an/ai. 
+ you are allowed to use only constant space and the time complexity is O(n). No divisions are allowed.
+ 
+ #do
+ 
+ ##Start
+ 
+You are given a small sorted list of numbers, and a very very long sorted list of numbers - so long that it had to be put on a disk in different blocks. How would you find those short list numbers in the bigger one?
+The key point is to store at lease len(small_str) - 1 data in memory before reading the next block.
+
+#Large Data
+ 
+ ##Start
+ Find or determine non existence of a number in a sorted list of N numbers where the numbers range over M, M>> N and N large enough to span multiple disks. 
+ Algorithm to beat O(log n) bonus points for constant time algorithm.
+ 
+ #do
+ 
+ 
+ 
+ 
+ ###Good
+ http://zhigang.org/wiki/GoogleInterviewQuestions#google-interview-questions-software-engineer
+ 
