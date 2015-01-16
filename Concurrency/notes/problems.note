@@ -1,0 +1,95 @@
+## Start ----
+
+Given an array
+[x1,x2,x3...xn,y1,y2,y3,y4...yn,z1,z2,z3,...zn]
+Convert it to 
+[x1,y1,z1,x2,y2,z2,x3,y3,z3......xn,yn,zn].
+
+Try to solve it inplace and using constant extra space.
+
+#Its a Matrix Transpose problem using extra space increases complexity
+#Inplace
+
+## Start 
+
+  #Inplace 
+  Inplace Merge Sort and how does it increases Temporal complexity
+
+## Start ----
+
+You are given an array representing trade price for a stock each day. You can buy or sell the stock at that given price.
+
+Each day, you can either buy one share, sell any number of shares that you own or not make any transaction at all. Given the trade price for the stock across several days (as an array), what is the maximum profit you can obtain?
+
+# You keep track of monotonically increasing numbers from other end of the array
+
+
+## Start ----
+
+Given two binary trees, find if second one is mirror image of first
+
+bool isMirrored(Node t1, Node t2) {
+       if(t1== null && t2 == null) {
+            return true;
+       }else if( t1 == null ||  t2 == null) {
+            return false;    
+       }
+       return  t1.data ==  t2.data   && isMirrored(t1.left, t2.right) && isMirrored(t1.right, t2.left);
+}
+
+## Start ----
+
+Largest Sum Contiguous Subarray
+
+  /**
+     * Keep Two Counters One for Maximum sum and the Other for 
+     * Continuous sum till it reach zeroes. If the sum reaches less than 
+     * zero than the LSCS  lies ahead of already have been found
+     * 
+     */
+    public static void main(String[] args) {
+        int arr[] = new int[]{1, 7, 3, -12, 5, 7, -2, 3};
+        int max_sum = 0;
+        int sumTillZero = 0;
+        for(int i = 0;i<arr.length;i++) {
+            sumTillZero = sumTillZero + arr[i]<0 ? 0 : sumTillZero + arr[i];
+            max_sum        = sumTillZero > max_sum ? sumTillZero : max_sum;
+        }
+        System.out.println(max_sum);
+    }
+    
+    # Solve for the case for all negative integers
+    
+## Start ----
+
+ Largest altering subsequence.    
+ 
+ # need to understand the problem
+ 
+## Start ----
+ 
+
+ Count the number of “holes” in a bitmap
+ 
+ This has one two holes
+  
+11111  
+10101  
+10101  
+11111
+
+This has two holes
+
+11111  
+10001  
+10101  
+11111
+
+# for more info http://stackoverflow.com/questions/4025980/count-the-number-of-holes-in-a-bitmap
+ 
+## Start ----
+ Dynamic Programming: Rod Cutting
+ 
+ #DP 
+ 
+  
