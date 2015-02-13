@@ -3,7 +3,7 @@ package com.snippets;
 
 public class SharedVariable {
 
-	private static int sharedVariable = 0;
+	private static int  sharedVariable = 0;
 	public static void main(String[] args) throws InterruptedException {
 		
 		new Thread(new Runnable() {

@@ -29,5 +29,15 @@ public class BalancedSet {
 	        System.out.println(balancedSet.f(0, 0, 0));
 		}
 	}
+	
+	void print(int c[][]) {
+		for(int i=0;i<c.length; i++) {
+			for(int j=0;j<c[i].length;j++) {
+				System.out.print(c[i][j] + ",\t");
+			}
+			System.out.println("");
+		}
+	}
+
 
 }

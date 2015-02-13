@@ -1,0 +1,45 @@
+
+
+http://stackoverflow.com/questions/tagged/design-patterns?sort=votes&pageSize=50
+
+##
+http://www.careercup.com/question?id=5739705276563456
+
+Design a robot that will take your order and make sandwiches for you. 
+
+Once I was done with this, I was supposed to extend it to have multiple robots doing this job like an assembly line handling multiple sandwiches and other edible items 
+
+Once I handled that, he asked me to create a web service for this that will handle online ordering. He also wanted me to implement fulfillment centers
+
+interface Sandwich extends Edible {
+
+
+}
+
+interface Robot {
+
+   Edible process(Order order); 
+}
+
+interface Order {
+
+
+}
+
+interface SandwichOrder {
+
+    
+}
+
+class OrderProcessor  {
+  
+   takeOrder(Order order);
+  
+   addWorker(Robot bobot)
+   
+     recieveOrder()
+   
+
+}
+
+#command pattern 

@@ -1,0 +1,42 @@
+
+##
+
+Web crawler 
+http://www.careercup.com/question?id=5737398201745408
+Map Reduce
+http://stackoverflow.com/questions/5834808/designing-a-web-crawler
+
+
+##
+http://www.careercup.com/question?id=5760108168478720
+Design a system like friend's functionality in facebook. should have all features of facebook's friends functionality. like for each person , he can have any number of friends , he will get suggestions for new firends , showing common friends if we visits any other profile . algo should be scalable , robust .
+
+
+ for(int i=0;i<1000;i++) {
+          // compiler reorders sharedVariable
+         // as it is not declared as volatile
+          if(sharedVariable != 1) {  
+            for(;;) {}  
+          }      
+ } 
+ 
+ 
+ for(int i=0;i<1000;i++) {
+          // compiler reorders sharedVariable
+         // as it is not declared as volatile
+          if(sharedVariable != 1) {  
+            for(;;) {}  
+          }      
+}
+
+
+for(int i=0;i<1000;i++) {
+/*compiler reorders sharedVariable
+as it is not declared as volatile
+and takes out the if condition out of the loop
+which is valid as compiler figures out that it not gonna  
+change sharedVariable is not going change */
+if(sharedVariable != 1) {  
+for(;;) {}  
+}      
+}
