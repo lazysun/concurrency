@@ -10,7 +10,7 @@ public class F {
 	}
 	
 	
-	char s [] = {'k','m','k','a','a','a','b','k','k','k','c','b','d'};
+	char s [] = {'k','m','k','a','a','a','b','k','k','k','c','b','d','b','a'};
 	char f [] = {'a','b','c','d'}; // String to be found
 	int m [] = new int[255]; // Keeps The number of occurrence of particular character till now
 
@@ -56,7 +56,7 @@ public class F {
      * Initializing map for default values
      */
 	public F() {
-		for(int i: m) {
+		for(int i=0;i<m.length; i++) {
 			m[i] = -1;
 		}
 		for(char i : f) {
