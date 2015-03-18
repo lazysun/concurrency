@@ -1,0 +1,32 @@
+/* any index k will be filled with water
+if the following conditon holds
+arr[i] > arr[k] && arr[j] > arr[k]
+where i<j<k
+O(N) solutions exist with 2 iterations With O(N) extra space
+arr will be having pos numbers as height of rods
+*/
+int arr[N];
+
+main() {
+	Sysout("Max Water Units which can be Filled : " + f());
+}
+maxWaterFill = f();
+
+int f() {
+	int [] temp;
+	int localMax = -;; // arr contains all +ive
+    for(int i=0;i<arr.length;i++) {
+         localMax = arr[i] > localMax ? arr[i] : localMax;
+         temp[i] = localMax; 
+    }
+
+    localMax = -1;
+    int water = 0;
+
+    for(int i=arr.length -1 ;i >= 0; i++) {
+         localMax = arr[i] > localMax ? arr[i] : localMax;
+         int diff =  min(localMax, temp[i]) -arr[i] ;
+         water = water +  (diff > 0 ? diff : 0);
+    } 
+    return water;
+}

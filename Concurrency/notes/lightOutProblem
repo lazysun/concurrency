@@ -1,0 +1,13 @@
+int a[N][N];
+
+f(p, a) { // it checks all 2^(n^2) combination
+    if(p.i== N-1 && p.j == N-1) { // checking leaf if we reached Solution 
+         return isAllOff(a) || isAllOff(toggle(p,a));
+    }
+	pnext = next(p);
+    return f(pnext, a) || f(pnext, toggle(p, a));
+}
+
+int [] toggle(p, a) {} // toggle the point p in the matrix and return the array
+
+p next(p) ; // computes the next point in row major fashion in double dim array NXN
