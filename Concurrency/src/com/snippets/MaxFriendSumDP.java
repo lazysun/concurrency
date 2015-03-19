@@ -6,9 +6,6 @@ import java.util.List;
 public class MaxFriendSumDP {
 	
 	
-	int dp() {
-		
-	}
 	
 	int f(Node n) {
 		int csum =0; // children Max Friend Sum

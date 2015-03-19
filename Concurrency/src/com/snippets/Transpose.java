@@ -38,9 +38,9 @@ public class Transpose {
 	 // 
 	}
 	
-	 private static int getWhereToIndex2 (int i , int columnsize, int rowsize){
+	private static int getWhereToIndex2 (int i , int columnsize, int rowsize){
 	        return (i%rowsize)*columnsize + i/rowsize;
-	    }
+	}
 	
 	public static String [] getConvertedArray(String [] arr){
         int length = arr.length;

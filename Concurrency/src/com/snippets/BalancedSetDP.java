@@ -15,18 +15,18 @@ public class BalancedSetDP {
 	
 	
 	int dp() {
-		int m = a.length;
+		int l = a.length;
 		int T = sum(a);
-		int c[][] = new int[m][T+1];
-	    for(int i=0;i<m;i++) {
+		int c[][] = new int[l][T+1];
+	    for(int i=0;i<l;i++) {
 	    	for(int j=0;j<T+1;j++) {
 	    		c[i][j] = Integer.MAX_VALUE;
 	    	}
 	    }
 		for(int k=0;k<T+1;k++) {
-			c[m-1][k] = Math.min(Math.abs(T-2*k), Math.abs(T-2*(k+a[m-1])) );
+			c[l-1][k] = Math.min(Math.abs(T-2*k), Math.abs(T-2*(k+a[l-1])) );
 		}
-		for(int i=m-2;i>=0;i--) {
+		for(int i=l-2;i>=0;i--) {
 			for(int j=0;j<T+1-a[i];j++) {
 				c[i][j] =Math.min(c[i+1][j+a[i]], c[i+1][j]);
 			}
@@ -57,18 +57,18 @@ public class BalancedSetDP {
 			}
 		}
 
-		int m = a.length;
+		int l = a.length;
 		int T = sum(a);
-		I x = new I(m, T + 1);
+		I x = new I(l, T + 1);
 
 		for (int k = 0; k < T + 1; k++) {
 			x.put(
-					m - 1,
+					l - 1,
 					k,
 					Math.min(Math.abs(T - 2 * k),
-							Math.abs(T - 2 * (k + a[m - 1]))));
+							Math.abs(T - 2 * (k + a[l - 1]))));
 		}
-		for (int i = m - 2; i >= 0; i--) {
+		for (int i = l - 2; i >= 0; i--) {
 			for (int j = 0; j < T + 1 - a[i]; j++) {
 				x.put(i, j,
 						Math.min(x.get(i + 1, j + a[i]), x.get(i + 1, j)));
