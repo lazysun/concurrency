@@ -142,7 +142,8 @@ ref:http://mypathtothe4.blogspot.com/2013/03/
  
  ##Start
  
-You are given a small sorted list of numbers, and a very very long sorted list of numbers - so long that it had to be put on a disk in different blocks. How would you find those short list numbers in the bigger one?
+You are given a small sorted list of numbers, and a very very long sorted list of numbers - so long that it had to be put on a disk in different blocks. 
+How would you find those short list numbers in the bigger one?
 The key point is to store at lease len(small_str) - 1 data in memory before reading the next block.
 
 #Large Data
