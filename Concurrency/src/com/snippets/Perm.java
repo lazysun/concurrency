@@ -3,7 +3,9 @@ package com.snippets;
 public class Perm {
 	
 	public static void main(String[] args) {
-	  new Perm().f(0);
+	  Perm p = new Perm();
+	  p.f(0);
+	  p.print();
 	}
 	
 	int arr[] = {1,2,3,4};
@@ -17,6 +19,7 @@ public class Perm {
 			f(k+1);
 			swap(k,i);
 		}
+		
 	}
 
 	private void print() {
