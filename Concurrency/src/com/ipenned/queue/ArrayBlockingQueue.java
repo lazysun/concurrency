@@ -58,7 +58,7 @@ public class ArrayBlockingQueue<T> {
 			t = dequeue();
 			c = count.getAndDecrement();
 			if(c > 1) {
-				notFull.signal();
+				notEmpty.signal();
 			}
 		}finally {
 			lock.unlock();
