@@ -5,7 +5,7 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class LinkedBlockingQueue<T> implements BlockingQueue<T> {
+public class ArrayBlockingQueue<T> {
 	
 	private final int capacity;
 	private final AtomicInteger count = new AtomicInteger(0); 
@@ -13,27 +13,26 @@ public class LinkedBlockingQueue<T> implements BlockingQueue<T> {
  	private final Lock takeLock = new ReentrantLock();
  	private final Condition notEmpty = takeLock.newCondition(); // putLock will signal that its not empty
  	private final Condition notFull = putLock.newCondition(); // signal when queue is notFull
-	
-	public LinkedBlockingQueue() {
-		this(Integer.MAX_VALUE);
-	}
-
-	public LinkedBlockingQueue(int capacity) {
+    private final Object [] items ;
+    int takeIndex;
+    int putIndex;
+ 	
+	public ArrayBlockingQueue(int capacity) {
 		this.capacity = capacity;
+		items = new Object[capacity];
+		
 	}
 
-	@Override
 	public void add(T t) throws InterruptedException {
 		int c = -1;
 		final Lock lock = this.putLock;
 		final AtomicInteger count = this.count;
-		Node<T> node  =  new Node<T>();
 		lock.lock();
 		try {
 			while(count.get() == capacity) {
 					notFull.await();
 			}
-			enqueue(node);
+			enqueue(t);
 			c = count.getAndIncrement();
 			if(c+1 < capacity) {
 				notFull.signal();
@@ -46,18 +45,17 @@ public class LinkedBlockingQueue<T> implements BlockingQueue<T> {
 		}
 	}
 
-	@Override
 	public T take() throws InterruptedException {
 		int c = -1;
 		final Lock lock = this.takeLock;
 		final AtomicInteger count = this.count;
-		Node<T> node  = null;
+		T t = null;
 		lock.lock();
 		try {
 			while(count.get() == 0) {
 				notEmpty.await();
 			}
-			node = dequeue();
+			t = dequeue();
 			c = count.getAndDecrement();
 			if(c > 1) {
 				notFull.signal();
@@ -66,12 +64,10 @@ public class LinkedBlockingQueue<T> implements BlockingQueue<T> {
 			lock.unlock();
 		}
 		if(c == capacity) {
-			signalNotEmpty();
+			signalNotFull();
 		}
-		return node.t;
+		return t;
 	}
-	
-
 
 	private void signalNotEmpty() {
 		final Lock lock = this.takeLock;
@@ -93,23 +89,23 @@ public class LinkedBlockingQueue<T> implements BlockingQueue<T> {
 		}
 	}
 
-	@Override
-	public void offer(T t) {
-		
+	private T dequeue() {
+		final Object[] items = this.items;
+        @SuppressWarnings("unchecked")
+        T x = (T) items[takeIndex];
+        items[takeIndex] = null;
+        if (++takeIndex == items.length)
+            takeIndex = 0;
+        return x;
 	}
-	
 
-	private Node<T> dequeue() {
-		return null;
-	}
-
 	
-	private void enqueue(Node<T> node) {
+	private void enqueue(T t) {
+		final Object[] items = this.items;
+        items[putIndex] = t;
+        if (++putIndex == items.length)
+            putIndex = 0;
 	}
 	
-	 static class Node<T> {
-		 T t;
-		 Node<T> next;
-	 }
 
 }

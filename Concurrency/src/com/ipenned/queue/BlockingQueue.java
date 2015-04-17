@@ -2,9 +2,9 @@ package com.ipenned.queue;
 
 public interface BlockingQueue<T> {
 	
-	void add(T t);
+	void add(T t) throws InterruptedException;
 	
 	void offer(T t);
 	
-	T take();
+	T take() throws InterruptedException;
 }
