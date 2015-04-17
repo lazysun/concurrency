@@ -60,13 +60,13 @@ public class LinkedBlockingQueue<T> implements BlockingQueue<T> {
 			node = dequeue();
 			c = count.getAndDecrement();
 			if(c > 1) {
-				notFull.signal();
+				notEmpty.signal();
 			}
 		}finally {
 			lock.unlock();
 		}
 		if(c == capacity) {
-			signalNotEmpty();
+			signalNotFull();
 		}
 		return node.t;
 	}
