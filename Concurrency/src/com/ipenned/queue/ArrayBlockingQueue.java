@@ -11,8 +11,8 @@ public class ArrayBlockingQueue<T> {
 	private final AtomicInteger count = new AtomicInteger(0); 
  	private final Lock putLock = new ReentrantLock();
  	private final Lock takeLock = new ReentrantLock();
- 	private final Condition notEmpty = takeLock.newCondition(); // putLock will signal that its not empty
- 	private final Condition notFull = putLock.newCondition(); // signal when queue is notFull
+ 	private final Condition notEmpty = takeLock.newCondition(); // signal when queue is not empty
+ 	private final Condition notFull = putLock.newCondition();   // signal when queue is notFull
     private final Object [] items ;
     int takeIndex;
     int putIndex;
